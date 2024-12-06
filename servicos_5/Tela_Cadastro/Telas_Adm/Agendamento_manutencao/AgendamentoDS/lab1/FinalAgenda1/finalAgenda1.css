@@ -1,0 +1,249 @@
+/* DEFINE O CORPO DA PÁGINA */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    margin: 0; /* Removendo a margem padrão */
+    padding: 0; /* Removendo o preenchimento padrão */
+    font-family: "Poppins", sans-serif; /* Define a fonte */
+    font-weight: 300; /* Define o peso da fonte */
+    font-style: normal; /* Define o estilo da fonte */
+    overflow: hidden;
+}
+
+.diagonal-gradient {
+    width: 100vw; /* Define a largura do gradiente */
+    height: 100vh; /* Define a altura do gradiente */
+    background: linear-gradient(to bottom right, #003185, #000000);
+    z-index: -1; /* Garantir que o gradiente esteja atrás de todo o conteúdo */
+}
+  
+html {
+  max-width: 1900px; /* Define a largura máxima */
+}  
+
+.navbar {
+  background-color: #000000; /* Cor de fundo */
+  color: #fff; /* Cor do texto */
+  padding: 60px 0; /* Preenchimento vertical apenas */
+  position: relative; /* Define a posição relativa */
+  display: flex; /* Layout flexível */
+  justify-content: space-between; /* Alinhamento dos itens */
+  align-items: center; /* Centraliza os itens verticalmente */
+  border-bottom: 1px solid #fff; /* Borda branca na parte inferior */
+  width: 100vw; /* Ocupará 100% da viewport */
+  left: 0; /* Alinhamento à esquerda */
+  right: 0; /* Alinhamento à direita */
+  margin: 0; /* Remove qualquer margem */
+  box-sizing: border-box; /* Inclui preenchimento e borda na largura total */
+}
+
+/* Estilos para o ícone de perfil */
+.Perfil-Momentaneo {
+    position: absolute;
+    right: 90vw; /* Use vw (viewport width) para manter a distância da borda direita relativa ao tamanho da tela */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Mantém centralizado verticalmente */
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .Perfil-Momentaneo img {
+    width: 80px;
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Responsividade para telas menores */
+  @media (max-width: 991px) {
+    .Perfil-Momentaneo {
+      right: 10vw; /* Aumenta a margem da direita para telas menores */
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .Perfil-Momentaneo {
+      right: 15vw; /* Ajusta ainda mais a posição para telas de tablets ou menores */
+    }
+  }
+
+/* ESTILOS PARA O DROPDOWN */
+.dropdown {
+    position: absolute; /* Define a posição absoluta */
+    right: 20px; /* Alinha o dropdown à direita */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Centraliza verticalmente */
+}
+
+.dropbtn {
+    background-color: #000000; /* Define a cor de fundo do botão */
+    color: #2EDBD3; /* Define a cor do texto */
+    padding: 16px; /* Adiciona preenchimento */
+    font-size: 40px; /* Define o tamanho da fonte */
+    border: none; /* Remove a borda */
+    cursor: pointer; /* Altera o cursor para indicar que é clicável */
+}
+
+/* ESTILOS PARA O CONTEÚDO DO DROPDOWN */
+.dropdown-content {
+    display: none; /* Oculta o conteúdo por padrão */
+    position: absolute; /* Define a posição absoluta */
+    background: linear-gradient(to bottom right, rgb(0, 0, 0), #003185); /* Define o gradiente de fundo */
+    min-width: 150px; /* Define a largura mínima */
+    z-index: 1; /* Define a ordem de empilhamento */
+    overflow: hidden; /* Oculta o overflow */
+    transition: max-height 0.3s ease-in-out; /* Aplica uma transição suave */
+    max-height: 0; /* Define a altura máxima inicialmente como zero */
+    border: 1px solid #ccc; /* Adiciona uma borda */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra */
+    right: 0; /* Alinha o dropdown à direita */
+}
+
+.dropdown.active .dropdown-content {
+    display: block; /* Exibe o conteúdo quando o dropdown está ativo */
+    max-height: 230px; /* Define a altura máxima */
+}
+
+/* ESTILOS PARA OS ITENS DO DROPDOWN */
+.dropdown-content a {
+    color: rgb(255, 255, 255); /* Define a cor do texto */
+    padding: 12px 16px; /* Adiciona preenchimento */
+    text-decoration: none; /* Remove a decoração de texto */
+    display: flex; /* Define como flex para permitir o alinhamento */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.dropdown-content a:hover {
+    background-color: #85857b; /* Define a cor de fundo ao passar o mouse */
+}
+
+/* ESTILOS PARA OS ITENS DO DROPDOWN */
+.dropdown-item {
+    padding: 3px; /* Reduz o preenchimento interno dos itens */
+    margin: 10px; /* Adiciona uma margem entre os itens e a caixa do dropdown */
+    border: 1px solid #ccc; /* Adiciona uma borda */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra */
+    display: flex; /* Usa flexbox para alinhar os itens horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    background: linear-gradient(to bottom right, rgb(0, 0, 0), #003185); /* Define o gradiente de fundo */
+    color: #fff; /* Define a cor do texto */
+}
+
+/* ESTILOS PARA AS IMAGENS DENTRO DOS ITENS DO DROPDOWN */
+.dropdown-item img {
+    width: 20px; /* Ajuste conforme necessário */
+    height: 20px; /* Ajuste conforme necessário */
+    margin-right: 10px; /* Adiciona espaço entre a imagem e o texto */
+}
+
+.content {
+    padding: 20px;
+    background-image: url('background.jpg');
+    background-size: relative;
+    background-repeat: no-repeat;
+    color: rgb(0, 0, 0);
+    top: 20%;
+}
+
+/* Estilos para o texto "Categorias" */
+.categorias {
+    color: #2EDBD3; /* Cor do texto */
+    font-size: 25px; /* Tamanho da fonte */
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
+    white-space: nowrap; /* Evita que o texto quebre em linhas */
+}
+
+@media (max-width: 768px) {
+    .resolve-button {
+        width: 80%; /* Ajusta a largura em telas menores */
+    }
+}
+
+/* ESTILOS PARA AS CAIXINHAS PRETAS */
+.container {
+    display: flex; /* Usa um layout flexível */
+    justify-content: center; /* Centraliza horizontalmente */
+    position: absolute; /* Posicionamento absoluto */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para o centro vertical e horizontal */
+    margin-top: 0; /* Remove a margem superior para evitar deslocamento */
+    border-radius: 10px;
+    width: 90%; /* Define a largura como 90% da tela */
+    max-width: 800px; /* Define uma largura máxima para telas grandes */
+    padding: 20px; /* Adiciona um padding para espaçamento interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra para um efeito visual */
+}
+
+/* Adicione media queries, se necessário, para ajustar estilos específicos */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Reduz o padding em telas menores */
+    }
+}
+
+.computer-details {
+    background-color: rgba(248, 245, 245, 0.363);
+    border-radius: 10px;
+    padding: 35px;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 500px;
+    margin-left: 645px;
+    margin: auto;
+}
+
+.computer-id {
+    background-color: #2EDBD3;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 24px;
+}
+
+.maintenance-details {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+h2 {
+    margin-top: 20px;
+    color: #ffde59;
+    text-align: center;
+}
+
+.voltar-img {
+    width: 30px; /* Tamanho inicial para telas grandes */
+    height: auto; /* Mantém a proporção da imagem */
+    position: fixed; /* Posicionamento absoluto */
+    left: 30px; /* Distância fixa da esquerda */
+    top: 173px; /* Posição inicial conforme solicitado */
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    z-index: 10; /* Garante que a imagem fique acima de outros elementos */
+}
+
+/* Media query para telas menores */
+@media (max-width: 768px) {
+    .voltar-img {
+        width: 20px; /* Ajusta o tamanho da imagem em telas menores */
+    }
+}
+
+  /* Estilos para o link "Voltar" */
+.voltar-link {
+    position: absolute; /* Posicionamento absoluto */
+    z-index: 1; /* Coloca o link "Voltar" sobre o gradiente de fundo */
+  }

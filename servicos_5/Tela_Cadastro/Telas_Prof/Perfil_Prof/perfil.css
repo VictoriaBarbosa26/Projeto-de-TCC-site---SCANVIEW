@@ -1,0 +1,407 @@
+/* DEFINE O CORPO DA PÁGINA */
+html, body {
+    margin: 0; /* Remover margem padrão */
+    padding: 0; /* Remover preenchimento padrão */
+    width: 100%; /* Garantir que o corpo ocupe toda a largura da tela */
+    height: 110%; /* Garantir que o corpo ocupe toda a altura da tela */
+    font-family: "Poppins", sans-serif; /* Define a fonte */
+    font-weight: 300; /* Define o peso da fonte */
+    font-style: normal; /* Define o estilo da fonte */
+  }
+  /* Desktop Grande */
+  @media (min-width: 1200px) {
+    .container {
+      width: 75%;
+    }
+  
+    .item {
+      flex: 1 1 300px;
+    }
+  }
+  
+  /* Desktop Médio */
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .container {
+      width: 80%;
+    }
+  
+    .item {
+      flex: 1 1 250px;
+    }
+  }
+  
+  /* Tablet Paisagem */
+  @media (min-width: 768px) and (max-width: 991px) {
+    .container {
+      width: 90%;
+    }
+  
+    .item {
+      flex: 1 1 200px;
+    }
+  }
+  
+  /* Tablet Retrato */
+  @media (min-width: 600px) and (max-width: 767px) {
+    .container {
+      width: 95%;
+    }
+  
+    .item {
+      flex: 1 1 180px;
+    }
+  }
+  
+  /* Smartphone Paisagem */
+  @media (min-width: 480px) and (max-width: 599px) {
+    .container {
+      width: 100%;
+    }
+  
+    .item {
+      flex: 1 1 160px;
+    }
+  }
+  
+  /* Smartphone Retrato */
+  @media (max-width: 479px) {
+    .container {
+      width: 100%;
+      padding: 0 10px;
+    }
+  
+    .item {
+      flex: 1 1 100%;
+      margin: 5px 0;
+    }
+  
+    body {
+      font-size: 14px;
+    }
+  }
+  
+  .diagonal-gradient {
+    position: fixed; /* Fixar a posição para cobrir a tela toda */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; 
+    background: linear-gradient(to bottom right, #003185, #000000);
+    z-index: -1; /* Garantir que o gradiente esteja atrás de todo o conteúdo */
+}
+
+/* ESTILOS PARA A BARRA DE NAVEGAÇÃO */
+.navbar {
+  background-color: #000000; /* Define a cor de fundo */
+  color: #fff; /* Define a cor do texto */
+  text-align: center; /* Centraliza o texto horizontalmente */
+  padding: 60px 20px; /* Adiciona preenchimento vertical e horizontal */
+  position: relative; /* Define a posição relativa */
+  display: flex; /* Usa um layout flexível para alinhar os itens */
+  justify-content: space-between; /* Alinha os itens à esquerda e à direita */
+  align-items: center; /* Centraliza verticalmente */
+  border-bottom: 1px solid #fff; /* Adiciona uma borda branca na parte inferior */
+}
+
+
+/* ESTILOS PARA O ÍCONE DE PERFIL */
+.Perfil-Momentaneo {
+    position: absolute; /* Define a posição absoluta */
+    right: 1120px; /* Alinha o ícone de perfil à esquerda */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Centraliza verticalmente */
+}
+
+.Perfil-Momentaneo img {
+    width: 80px; /* Define a largura da imagem */
+    height: 80px; /* Define a altura da imagem */
+    border-radius: 50%; /* Adiciona bordas arredondadas */
+    object-fit: cover; /* Mantém a proporção da imagem */
+}
+
+/* ESTILOS PARA O DROPDOWN */
+.dropdown {
+    position: absolute; /* Define a posição absoluta */
+    right: 20px; /* Alinha o dropdown à direita */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    z-index: 100;
+}
+
+.dropbtn {
+    background-color: #000000; /* Define a cor de fundo do botão */
+    color: rgb(0, 229, 255); /* Define a cor do texto */
+    padding: 16px; /* Adiciona preenchimento */
+    font-size: 40px; /* Define o tamanho da fonte */
+    border: none; /* Remove a borda */
+    cursor: pointer; /* Altera o cursor para indicar que é clicável */
+}
+
+.dropdown-content {
+    display: none; /* Oculta o conteúdo por padrão */
+    position: absolute; /* Define a posição absoluta */
+    background: linear-gradient(to bottom right, rgb(0, 0, 0), #003185, rgb(0, 0, 0)); /* Define o gradiente de fundo */
+    min-width: 150px; /* Define a largura mínima */
+    z-index: 1; /* Define a ordem de empilhamento */
+    overflow: hidden; /* Oculta o overflow */
+    transition: max-height 0.3s ease-in-out; /* Aplica uma transição suave */
+    max-height: 0; /* Define a altura máxima inicialmente como zero */
+    border: 1px solid #ccc; /* Adiciona uma borda */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra */
+    right: 0; /* Alinha o dropdown à direita */
+}
+
+/* Exibe o conteúdo quando o dropdown está ativo */
+.dropdown.active .dropdown-content {
+    display: block; /* Exibe o conteúdo quando o dropdown está ativo */
+    max-height: 230px; /* Define a altura máxima */
+}
+
+/* Estilos para os links dentro do dropdown */
+.dropdown-content a {
+    color: rgb(255, 255, 255); /* Define a cor do texto */
+    padding: 12px 16px; /* Adiciona preenchimento */
+    text-decoration: none; /* Remove a decoração de texto */
+    display: block; /* Define como bloco */
+}
+
+/* Estilos ao passar o mouse nos links do dropdown */
+.dropdown-content a:hover {
+    background-color: #6e6e6e; /* Define a cor de fundo ao passar o mouse */
+}
+
+/* Estilos para os itens do dropdown */
+.dropdown-item {
+    padding: 3px; /* Reduz o preenchimento interno dos itens */
+    margin: 10px; /* Adiciona uma margem entre os itens e a caixa do dropdown */
+    border: 1px solid #ccc; /* Adiciona uma borda */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra */
+    display: flex; /* Usa flexbox para alinhar os itens horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    background: linear-gradient(to bottom right, rgb(0, 0, 0), #003185, rgb(0, 0, 0)); /* Define o gradiente de fundo */
+    color: #fff; /* Define a cor do texto */
+}
+
+/* Estilos para as imagens dentro dos itens do dropdown */
+.dropdown-item img {
+    width: 20px; /* Ajuste conforme necessário */
+    height: 20px; /* Ajuste conforme necessário */
+    margin-right: 1px; /* Adiciona espaço entre a imagem e o texto */
+}
+
+
+/* Estilos para a imagem "Voltar" */
+.voltar-img {
+    width: 30px; /* Define a largura da imagem */
+    height: auto; /* Ajusta a altura automaticamente */
+    position: absolute; /* Define a posição como absoluta */
+    left: 20px; /* Define a distância da esquerda */
+    top: 40px; /* Define a posição vertical */
+    transform: translateY(-50%); /* Ajusta a posição verticalmente */
+}
+
+.voltar-link {
+    position: absolute; /* Define a posição como absoluta */
+    z-index: 1; /* Define a ordem de empilhamento */
+}
+
+/* Estilo para a imagem de chave */
+.perfil-img, .chave-img, .email-img, .local-img, .olho-img {
+  width: 40px; /* Define a largura da imagem */
+  height: auto; /* Define a altura automática */
+  position: absolute; /* Define a posição como absoluta */
+  right: 460px; /* Posiciona 120px da borda direita */
+  transform: translateY(-50%); /* Centraliza verticalmente */
+}
+
+
+.perfil-img{
+  top: 285px; /* Posiciona 250px do topo */
+}
+
+/* Estilo para a imagem de chave */
+.chave-img {
+  top: 485px; /* Posiciona 250px do topo */
+}
+
+/* Estilo para a imagem de e-mail */
+.email-img {
+  top: 675px; /* Posiciona 400px do topo */
+}
+
+/* Estilo para a imagem de localização */
+.local-img {
+  top: 865px; /* Posiciona 550px do topo */
+}
+
+/* Estilo para a imagem de olho */
+.olho-img {
+  top: 1065px; /* Posiciona 700px do topo */
+}
+
+/*Botão salvar modificações e sair*/
+.custom-button {
+  position: absolute; /* Define a posição como absoluta */
+  background-color: #FFD059; /* Define a cor de fundo */
+  color: black; /* Define a cor do texto */
+  padding: 5px 80px; /* Define o preenchimento */
+  border: none; /* Remove a borda */
+  border-radius: 15px; /* Arredonda os cantos */
+  font-size: 10px; /* Define o tamanho da fonte */
+  cursor: pointer; /* Define o cursor como pointer (mãozinha) */
+  font-family: "Poppins", sans-serif; /* Define a fonte */
+  font-weight: 500; /* Define o peso da fonte */
+  font-style: normal; /* Define o estilo da fonte */
+  font-size: 20px; /* Define o tamanho da fonte */
+  text-align: center; /* Centraliza o texto */
+  top: 135%; /* Posiciona 115% do topo */
+  left: 45%; /* Posiciona 43% da esquerda */
+  transition: background-color 0.3s ease; /* Define uma transição suave para a cor de fundo */
+}
+
+/* Estilo para o botão personalizado ao passar o mouse */
+.custom-button:hover {
+  background-color: #383838; /* Define a cor de fundo ao passar o mouse */
+}
+
+/* Estilo para o botão Salvar Modificações */
+.salvar-button {
+  position: absolute;
+  color: cyan; /* Define a cor do texto como ciano */
+  padding: 5px 80px;
+  border: none; /* Remove a borda */
+  border-radius: 15px; /* Arredonda os cantos */
+  font-size: 20px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  text-align: justify;
+  top: 125%; /* Coloca acima do botão "Sair" */
+  left: 40%;
+  background-color: transparent; /* Sem cor de fundo */
+  transition: color 0.3s ease;
+}
+
+/* Estilo para o botão ao passar o mouse */
+.salvar-button:hover {
+  color: #00ffff; /* Muda a cor para uma tonalidade mais clara de ciano ao passar o mouse */
+}
+
+
+/* Estilo para o texto centralizado */
+.nome, .cargo, .email, .local, .senha {
+    position: absolute; /* Define a posição como absoluta */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Centraliza verticalmente e horizontalmente */
+    color: #ffffff; /* Define a cor do texto como ciano */
+    font-family: "Poppins", sans-serif; /* Define a fonte para Poppins */
+    font-size: 24px; /* Define o tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+    z-index: 2; /* Garante que o texto fique acima de outros elementos */
+    padding: 10px; /* Aumenta o espaço interno */
+    white-space: nowrap; /* Impede a quebra de linha */
+}
+
+/* Ajuste individual de top para cada classe */
+.nome { top: 30%; } /* Muda a posição vertical para baixo */
+.cargo { top: 50%; } /* Muda a posição vertical para baixo */
+.email { top: 70%; } /* Muda a posição vertical para baixo */
+.local { top: 90%; } /* Muda a posição vertical para baixo */
+.senha { top: 110%; } /* Muda a posição vertical para baixo */
+
+.info-container:not(:last-child)::after {
+  content: ""; /* Cria um pseudo-elemento */
+  display: block; /* Exibe como bloco */
+  height: 1px; /* Altura da linha */
+  background-color: rgba(255, 255, 255, 0.5); /* Linha branca meio transparente */
+  width: calc(50% + 0px); /* Aumenta a largura da linha */
+  position: absolute; /* Posiciona a linha */
+  left: 500px; /* Ajusta a posição à esquerda */
+  top: 36%;
+}
+
+.info-container2:not(:last-child)::after {
+  content: ""; /* Cria um pseudo-elemento */
+  display: block; /* Exibe como bloco */
+  height: 1px; /* Altura da linha */
+  background-color: rgba(255, 255, 255, 0.5); /* Linha branca meio transparente */
+  width: calc(50% + 0px); /* Aumenta a largura da linha */
+  position: absolute; /* Posiciona a linha */
+  left: 500px; /* Ajusta a posição à esquerda */
+  top: 56%;
+}
+
+.info-container3:not(:last-child)::after {
+  content: ""; /* Cria um pseudo-elemento */
+  display: block; /* Exibe como bloco */
+  height: 1px; /* Altura da linha */
+  background-color: rgba(255, 255, 255, 0.5); /* Linha branca meio transparente */
+  width: calc(50% + 0px); /* Aumenta a largura da linha */
+  position: absolute; /* Posiciona a linha */
+  left: 500px; /* Ajusta a posição à esquerda */
+  top: 77%;
+}
+
+.info-container4:not(:last-child)::after {
+  content: ""; /* Cria um pseudo-elemento */
+  display: block; /* Exibe como bloco */
+  height: 1px; /* Altura da linha */
+  background-color: rgba(255, 255, 255, 0.5); /* Linha branca meio transparente */
+  width: calc(50% + 0px); /* Aumenta a largura da linha */
+  position: absolute; /* Posiciona a linha */
+  left: 500px; /* Ajusta a posição à esquerda */
+  top: 97%;
+}
+
+.info-container5:not(:last-child)::after {
+  content: ""; /* Cria um pseudo-elemento */
+  display: block; /* Exibe como bloco */
+  height: 1px; /* Altura da linha */
+  background-color: rgba(255, 255, 255, 0.5); /* Linha branca meio transparente */
+  width: calc(50% + 0px); /* Aumenta a largura da linha */
+  position: absolute; /* Posiciona a linha */
+  left: 500px; /* Ajusta a posição à esquerda */
+  top:118%;
+}
+
+
+
+
+.Perfil-Momentaneo {
+  position: absolute; /* Define a posição como absoluta */
+  top: 50%; /* Posiciona no meio verticalmente */
+  right: 1100%; /* Posiciona fora da tela à direita */
+  transform: translate(-50%, -50%); /* Centraliza usando transformação */
+  text-align: center; /* Centraliza o texto */
+}
+
+/* Estilo para o texto do perfil */
+.Perfil-Momentaneo .perfil-texto {
+  color: #00ffff; /* Define a cor do texto como ciano */
+  font-family: "Poppins", sans-serif; /* Define a fonte para Poppins */
+  font-weight: 400; /* Define o peso da fonte como normal */
+  font-size: 18px; /* Define o tamanho da fonte */
+  margin-bottom: 1px; /* Define a margem inferior */
+}
+
+.profile-icon {
+  display: flex; /* Usa o flexbox para alinhar itens */
+  align-items: center; /* Centraliza itens verticalmente */
+  justify-content: center; /* Centraliza itens horizontalmente */
+  width: 100px; /* Define a largura */
+  height: 100px; /* Define a altura */
+  border-radius: 50%; /* Arredonda os cantos para criar um círculo */
+  overflow: hidden; /* Oculta conteúdo que exceder */
+  background-color: #fff; /* Define a cor de fundo como branca */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra */
+}
+
+/* Estilo para a imagem do ícone de perfil */
+.profile-icon img {
+  width: 100%; /* Define a largura como 100% do contêiner */
+  height: 100%; /* Define a altura como 100% do contêiner */
+  object-fit: cover; /* Ajusta a imagem para cobrir o contêiner */
+}

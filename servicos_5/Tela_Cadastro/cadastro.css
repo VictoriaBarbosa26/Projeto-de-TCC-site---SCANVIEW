@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+html, body {
+    height: 100%; /* Certifica que o fundo cobre toda a página */
+    font-family: "Poppins", sans-serif; /* Define a fonte */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Desktop Grande */
+  @media (min-width: 1200px) {
+      .container {
+        width: 75%;
+      }
+    
+      .item {
+        flex: 1 1 300px;
+      }
+    }
+    
+    /* Desktop Médio */
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .container {
+        width: 80%;
+      }
+    
+      .item {
+        flex: 1 1 250px;
+      }
+    }
+    
+    /* Tablet Paisagem */
+    @media (min-width: 768px) and (max-width: 991px) {
+      .container {
+        width: 90%;
+      }
+    
+      .item {
+        flex: 1 1 200px;
+      }
+    }
+    
+    /* Tablet Retrato */
+    @media (min-width: 600px) and (max-width: 767px) {
+      .container {
+        width: 95%;
+      }
+    
+      .item {
+        flex: 1 1 180px;
+      }
+    }
+    
+    /* Smartphone Paisagem */
+    @media (min-width: 480px) and (max-width: 599px) {
+      .container {
+        width: 100%;
+      }
+    
+      .item {
+        flex: 1 1 160px;
+      }
+    }
+    
+    /* Smartphone Retrato */
+    @media (max-width: 479px) {
+      .container {
+        width: 100%;
+        padding: 0 10px;
+      }
+    
+      .item {
+        flex: 1 1 100%;
+        margin: 5px 0;
+      }
+    
+      body {
+        font-size: 14px;
+      }
+  }
+
+  body {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 1), #003185); /* Gradiente semi-transparente */
+    background-size: cover;  /* A imagem de fundo cobre toda a tela */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;    
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+    overflow: hidden; /* Oculta qualquer overflow para manter o layout limpo */
+  }
+  
+  .logo {
+    position: absolute;
+    left: 12%; /* Mantém o logo a 10% da margem esquerda */
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 26vw; /* O logo ocupará 20% da largura da viewport */
+    height: auto; /* A altura será ajustada automaticamente */
+    top: -7%;
+  }
+  
+  @media (max-width: 1200px) {
+    .logo {
+      width: 18vw; /* Reduz a largura em telas menores */
+      top: -3%; /* Ajusta o posicionamento vertical */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .logo {
+      width: 25vw; /* Aumenta a largura proporcionalmente para telas menores */
+      top: -2%; /* Ajusta o posicionamento para telas menores */
+      left: 15%; /* Reposiciona um pouco mais para a esquerda */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+      width: 35vw; /* Ajusta a largura para dispositivos móveis */
+      top: 0%; /* Remove o deslocamento negativo */
+      left: 20%; /* Centraliza um pouco mais no celular */
+    }
+  }  
+  
+  /*CAIXA DE FUNDO SEMITRANSPARENE*/
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative; /* Necessário para o posicionamento do flexbox */
+    width: 100%;
+    max-width: 500px;
+    max-height: 600px;
+  }
+  
+  /*IMAGENS AO LADO DOS INPUTS*/
+  .identi {
+    width: 52px; /* Define o novo tamanho da largura do ícone */
+    height: 50px; /* Define o novo tamanho da altura do ícone */
+    margin-right: 12px; /* Espaço entre a imagem e o campo */
+    position: relative;
+    top: 55px;
+    left: -60px;
+  }
+  .curso {
+    width: 52px; /* Define o novo tamanho da largura do ícone */
+    height: 50px; /* Define o novo tamanho da altura do ícone */
+    margin-right: 12px; /* Espaço entre a imagem e o campo */
+    position: relative;
+    top: 55px;
+    left: -60px;
+  }
+  /*INPUTS E SUAS IMAGENS*/
+  .form-group img.icon {
+    width: 52px; /* Define o novo tamanho da largura do ícone */
+    height: 50px; /* Define o novo tamanho da altura do ícone */
+    margin-right: 12px; /* Espaço entre a imagem e o campo */
+    display: flex;
+  }
+  
+  .form-group input, .form-group select {
+      flex: 1; /* O input vai ocupar o espaço restante */
+      padding: 14px;
+      border: 2px solid #ffffff;
+      border-radius: 4px;
+      font-size: 18px;
+      color: black;
+      background-color: white;
+      transition: border-color 0.9s ease;
+      outline: none; /* Remove a borda de foco padrão */
+  }
+  
+  .form-group input:focus, .form-group select:focus {
+      border-color: #ffffff;
+  }
+  
+  .form-group input::placeholder {
+    color: #ffffff;
+  }
+  
+  .container {
+    background-color: rgba(2, 3, 44, 0.265);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; /* Use 'relative' em vez de 'absolute' para evitar problemas de layout */
+    width: 90%; /* O container ocupa a largura total da tela */
+    max-width: 600px; /* Definir uma largura máxima para não esticar muito em telas grandes */
+    min-width: 200px; /* Definir uma largura mínima para não encolher demais */
+    color: white;
+    border-radius: 10px;
+    max-height: 900px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 40px;
+  }
+  
+  /* INPUT NOME ATÉ CARGO */
+  .form-group {
+    top: -10px;
+    display: flex; /* Usar flexbox para alinhar imagem e campo lado a lado */
+    align-items: left;
+    left: 24%;
+    width: 55%;
+    position: relative;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .form-group input, .form-group select {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    font-size: 18px;
+    color: black;
+    background-color: white;
+    transition: border-color 0.9s ease;
+    font-family: "Poppins", sans-serif;
+    outline: none; /* Remove a borda de foco padrão */
+  }
+  
+  .form-group input:focus, .form-group select:focus {
+    border-color: #ffffff;
+  }
+  
+  .form-group input::placeholder {
+    color: #ffffff;
+  }
+  
+  .input-label {
+    position: absolute;
+    top: 15px;
+    left: 75px;
+    font-size: 18px;
+    color: #000000;
+    transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+    font-family: "Poppins", sans-serif;
+    pointer-events: none;
+  }
+  
+  .form-group input:focus + .input-label,
+  .form-group input:not(:placeholder-shown) + .input-label,
+  .form-group select:focus + .input-label {
+    top: -12px;
+    font-size: 15px;
+    color: #ffde59;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  
+  /* CAMPO RM (OU ALUNO QUANDO SELECIONADO) */
+  .form-group1 {
+    left: 34.5%;
+    width: 30.5%;
+    position: relative;
+    margin-bottom: -10px;
+    font-family: "Poppins", sans-serif;
+    top: -50px;
+  }
+  
+  .form-group1 input, .form-group1 select {
+    position: relative;
+    width: 129%;
+    padding: 14px;
+    border: 2px solid #ffffff;
+    font-family: "Poppins", sans-serif;
+    border-radius: 4px;
+    font-size: 18px;
+    color: black;
+    background-color: white;
+    transition: border-color 0.9s ease;
+    outline: none; /* Remove a borda de foco padrão */
+  }
+  
+  .form-group1 input:focus, .form-group1 select:focus {
+      border-color: #ffffff; 
+  }
+  
+  .form-group1 input::placeholder {
+      color: #ffffff;
+  }
+  
+  .input-labelRM {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    font-size: 17px;
+    color: #000000;
+    transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+    font-family: "Poppins", sans-serif;
+    pointer-events: none;
+  }
+  
+  .form-group1 input:focus + .input-labelRM,
+  .form-group1 input:not(:placeholder-shown) + .input-labelRM,
+  .form-group1 select:focus + .input-labelRM {
+    top: 45px;
+    font-size: 15px;
+    color: #ffde59;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+/*---------------------------------------------------*/
+
+  /* Estilos para a mensagem de erro */
+  .error-message {
+      color: #d9534f; /* Vermelho para a mensagem de erro */
+      background-color: #f8d7da; /* Cor de fundo para a mensagem de erro */
+      border: 1px solid #f5c6cb; /* Borda da mensagem de erro */
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px; /* Espaçamento entre a mensagem de erro e o botão de cadastro */
+      display: none; /* Inicialmente escondido, exibido pelo PHP */
+      width: 100%; /* Garante que a mensagem ocupe toda a largura disponível */
+      box-sizing: border-box; /* Inclui o padding e a borda no cálculo da largura total */
+      font-family: "Poppins", sans-serif;
+  }
+  
+  .notification {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to bottom right, #003185, #000000);
+    font-family: "Poppins", sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    max-width: 30vw; /* Limita a largura máxima a 90% da viewport */
+    width: 60%;
+    max-height: 75vh; /* Limita a altura máxima a 90% da viewport */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: auto; /* Habilita o scroll caso o conteúdo ultrapasse o tamanho máximo */
+}
+
+/* Media query para dispositivos muito pequenos */
+@media screen and (max-width: 600px) {
+    .notification {
+        padding: 15px; /* Reduz o padding em telas menores */
+        max-width: 95vw; /* Toma quase a tela toda */
+        width: 95%;
+        font-size: 0.9rem; /* Diminui um pouco o texto para telas pequenas */
+    }
+}
+
+/* Media query para telas muito pequenas, como celulares */
+@media screen and (max-width: 400px) {
+    .notification {
+        padding: 10px;
+        font-size: 0.8rem; /* Texto menor para melhor adaptação */
+    }
+}
+  
+  .notification-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: -1;
+  }
+  
+  .notification-content h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .notification-content p {
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-align: justify;
+  }
+  
+  .notification-content label {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .notification-content input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .notification-content button {
+    background-color: #003185;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .notification-content button:disabled {
+    background-color: #555555;
+    cursor: not-allowed;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #555555;
+    font-size: 18px;
+    cursor: pointer;
+  }

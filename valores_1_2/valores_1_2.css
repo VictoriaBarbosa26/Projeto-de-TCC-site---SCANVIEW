@@ -1,0 +1,212 @@
+/* DEFINE O CORPO DA PÁGINA */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html, body {
+  margin: 0; /* Remover margem padrão */
+  padding: 0; /* Remover preenchimento padrão */
+  width: 100%; /* Garantir que o corpo ocupe toda a largura da tela */
+  height: 110%; /* Garantir que o corpo ocupe toda a altura da tela */
+}
+
+/* Desktop Grande */
+@media (min-width: 1200px) {
+  .container {
+    width: 75%;
+  }
+
+  .item {
+    flex: 1 1 300px;
+  }
+}
+
+/* Desktop Médio */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    width: 80%;
+  }
+
+  .item {
+    flex: 1 1 250px;
+  }
+}
+
+/* Tablet Paisagem */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    width: 90%;
+  }
+
+  .item {
+    flex: 1 1 200px;
+  }
+}
+
+/* Tablet Retrato */
+@media (min-width: 600px) and (max-width: 767px) {
+  .container {
+    width: 95%;
+  }
+
+  .item {
+    flex: 1 1 180px;
+  }
+}
+
+/* Smartphone Paisagem */
+@media (min-width: 480px) and (max-width: 599px) {
+  .container {
+    width: 100%;
+  }
+
+  .item {
+    flex: 1 1 160px;
+  }
+}
+
+/* Smartphone Retrato */
+@media (max-width: 479px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .item {
+    flex: 1 1 100%;
+    margin: 5px 0;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}
+
+.diagonal-gradient {
+  position: fixed; /* Fixar a posição para cobrir a tela toda */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; 
+  background: linear-gradient(to bottom right, #003185, #000000);
+  z-index: -1; /* Garantir que o gradiente esteja atrás de todo o conteúdo */
+}
+
+.text-box1 {
+  color: #ffd541; /* cor do teaxto */
+  padding: 20px; /* espaçamento interno */
+  position: absolute; /* posicionamento absoluto */
+  top: -10%; /* coloca a caixa no centro vertical */
+  left: 55%; /* coloca a caixa no centro horizontal */
+  transform: translate(-50%, 50%); /* corrige a posição para o centro vertical e horizontal */
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 40px;
+  text-align: center; /* alinha o texto para a direita */
+}
+
+.Logo {
+    width: auto; /* tamanho automático da imagem */
+    height: auto; /* altura automática */
+    max-width: 50%; /* largura máxima */
+    position: absolute; /* posicionamento absoluto */
+    top: calc(0% - 90px); /* centraliza verticalmente com o texto */
+    right: calc(40% + 370px); /* posiciona à direita do texto */
+}
+
+.text_valores_1, .text_valores_2 {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 1), #003185); /* gradiente do preto para o azul */
+  color: white; /* cor do texto */
+  padding: 20px; /* espaçamento interno */
+  position: absolute; /* posicionamento absoluto */
+  top: 44%; /* coloca a caixa no centro vertical */
+  left: 30%; /* coloca a caixa no centro horizontal */
+  transform: translate(-50%, 50%); /* corrige a posição para o centro vertical e horizontal */
+  max-width: 30%; /* largura máxima */
+  border-radius: 10px; /* borda arredondada */
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+  text-align: center;
+  border: 2px solid #ffde59; /* borda ao redor da caixa */
+  opacity: 0; /* início invisível */
+  animation: fadeIn 2s forwards, slideIn 2s forwards;
+  animation-delay: 0.5s; /* delay antes de iniciar a animação */
+  transition: transform 0.5s ease; /* aplica uma transição suave à transformação */
+}
+
+.text_valores_2 {
+    top: 45%; /* ajustando posição para evitar sobreposição */
+    left: 73%; /* ajustando posição */
+    animation-delay: 1s; /* delay diferente para a segunda caixa */
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    to {
+        transform: translate(-50%, 0);
+    }
+}
+
+.v {
+    text-align: center; /* Centraliza o texto */
+    position: absolute;
+    left: 38%;  
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.v2 {
+    text-align: center; /* Centraliza o texto */
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.mensagem a {
+    /* Remover linha abaixo do link */
+    text-decoration: none;
+    /* Cor do link fixa */
+    color: #ffd541;
+    /* Adicione qualquer outro estilo necessário para o link */
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 30px;
+    text-align: center;
+}
+
+/* Animação de piscar para o botão de mensagem */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.mensagem {
+    /* Estilo existente */
+    padding: 20px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 30px;
+    text-align: center;
+    animation: blink 3s infinite; /* Piscar a cada segundo, infinitamente */
+}

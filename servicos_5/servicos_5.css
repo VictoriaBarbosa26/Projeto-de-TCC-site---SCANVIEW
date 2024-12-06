@@ -1,0 +1,162 @@
+/* DEFINE O CORPO DA PÁGINA */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html, body {
+  margin: 0; /* Remover margem padrão */
+  padding: 0; /* Remover preenchimento padrão */
+  width: 100%; /* Garantir que o corpo ocupe toda a largura da tela */
+  height: 110%; /* Garantir que o corpo ocupe toda a altura da tela */
+}
+
+/* Desktop Grande */
+@media (min-width: 1200px) {
+  .container {
+    width: 75%;
+  }
+
+  .item {
+    flex: 1 1 300px;
+  }
+}
+
+/* Desktop Médio */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    width: 80%;
+  }
+
+  .item {
+    flex: 1 1 250px;
+  }
+}
+
+/* Tablet Paisagem */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    width: 90%;
+  }
+
+  .item {
+    flex: 1 1 200px;
+  }
+}
+
+/* Tablet Retrato */
+@media (min-width: 600px) and (max-width: 767px) {
+  .container {
+    width: 95%;
+  }
+
+  .item {
+    flex: 1 1 180px;
+  }
+}
+
+/* Smartphone Paisagem */
+@media (min-width: 480px) and (max-width: 599px) {
+  .container {
+    width: 100%;
+  }
+
+  .item {
+    flex: 1 1 160px;
+  }
+}
+
+/* Smartphone Retrato */
+@media (max-width: 479px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .item {
+    flex: 1 1 100%;
+    margin: 5px 0;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}
+
+.diagonal-gradient {
+  position: fixed; /* Fixar a posição para cobrir a tela toda */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; 
+  background: linear-gradient(to bottom right, #003185, #000000);
+  z-index: -1; /* Garantir que o gradiente esteja atrás de todo o conteúdo */
+}
+
+.text-box1 {
+    color: #2EDBD3; /* cor do texto */
+    padding: 20px; /* espaçamento interno */
+    position: absolute; /* posicionamento absoluto */
+    top: -10%; /* coloca a caixa no centro vertical */
+    left: 50%; /* coloca a caixa no centro horizontal */
+    transform: translate(-50%, 50%); /* corrige a posição para o centro vertical e horizontal */
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 40px;
+    text-align: center; /* alinha o texto para a direita */
+}
+
+.Logo {
+  width: auto; /* tamanho automático da imagem */
+  height: auto; /* altura automática */
+  max-width: 50%; /* largura máxima */
+  position: absolute; /* posicionamento absoluto */
+  top: calc(0% - 90px); /* centraliza verticalmente com o texto */
+  right: calc(40% + 370px); /* posiciona à direita do texto */
+}
+
+.text_servicos_5  {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 1), #003185); /* gradiente do preto para o azul */
+  color: white; /* cor do texto */
+  padding: 20px; /* espaçamento interno */
+  position: absolute; /* posicionamento absoluto */
+  top: 50%; /* coloca a caixa no centro vertical */
+  left: 50%; /* coloca a caixa no centro horizontal */
+  transform: translate(-50%, 50%); /* corrige a posição para o centro vertical e horizontal */
+  max-width: 40%; /* largura máxima */
+  border-radius: 10px; /* borda arredondada */
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+  text-align: center;
+  border: 2px solid #ffde59; /* borda ao redor da caixa */
+  opacity: 0; /* início invisível */
+  animation: fadeIn 2s forwards, slideIn 2s forwards;
+  animation-delay: 0.5s; /* delay antes de iniciar a animação */
+  transition: transform 0.5s ease; /* aplica uma transição suave à transformação */
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    to {
+        transform: translate(-50%, 0);
+    }
+}
+
+.s {
+  text-align: center; /* Centraliza o texto */
+  position: absolute;
+  left: 3%;  
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.custom-button:hover {
+  background-color: #4A8DFF;
+}

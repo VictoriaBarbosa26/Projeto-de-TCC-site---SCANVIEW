@@ -1,0 +1,189 @@
+/* DEFINE O CORPO DA PÁGINA */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html, body {
+    margin: 0; /* Remover margem padrão */
+    width: 100%; /* Garantir que o corpo ocupe toda a largura da tela */
+    height: 100%; /* Garantir que o corpo ocupe toda a altura da tela */
+    overflow: hidden; /* Impede rolagem se o gradiente for maior que a tela */
+}
+
+.diagonal-gradient {
+  position: fixed; /* Fixar a posição para cobrir a tela toda */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; 
+  background: linear-gradient(to bottom right, #003185, #000000);
+  z-index: -1; /* Garantir que o gradiente esteja atrás de todo o conteúdo */
+}
+
+.text-box1 {
+  color: #2EDBD3; /* cor do texto */
+  padding: 20px; /* espaçamento interno */
+  position: absolute; /* posicionamento absoluto */
+  top: 5%; /* coloca a caixa no centro vertical */
+  left: 65%; /* coloca a caixa no centro horizontal */
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 80px;
+  text-align: right; /* alinha o texto para a direita */
+  z-index: 1;
+}
+
+.Linha {
+  width: 100%; /* Ajusta a largura para preencher o espaço disponível */
+  height: auto; /* Mantém a altura proporcional à largura */
+  max-width: 100%; /* Impede que a imagem exceda o container */
+  position: absolute; /* Posicionamento absoluto para ajustar a posição */
+  top: 8%; /* Ajusta a posição vertical */
+  left: 64%; /* Ajusta a posição horizontal */
+  transform: translateX(400px); /* Corrige a distância a partir da esquerda */
+}
+
+@media (max-width: 1200px) {
+  .Linha {
+    top: 15%; /* Ajusta a posição vertical para telas menores */
+    left: 60%; /* Ajusta a posição horizontal para manter proporcionalidade */
+    transform: translateX(300px); /* Reduz o deslocamento horizontal */
+  }
+}
+
+@media (max-width: 768px) {
+  .Linha {
+    top: 10%; /* Ajusta a posição vertical para tablets e telas menores */
+    left: 50%; /* Ajusta a posição horizontal */
+    transform: translateX(200px); /* Reduz ainda mais o deslocamento horizontal */
+  }
+}
+
+@media (max-width: 480px) {
+  .Linha {
+    top: 5%; /* Ajusta a posição para telas de smartphones */
+    left: 40%; /* Centraliza mais em telas pequenas */
+    transform: translateX(100px); /* Ajuste menor para deslocamento horizontal */
+  }
+}
+
+.Logo {
+  width: auto; /* tamanho automático da imagem */
+  height: auto; /* altura automática */
+  max-width: 100%; /* largura máxima */
+  position: absolute; /* posicionamento absoluto */
+  top: calc(0% - 90px); /* centraliza verticalmente com o texto */
+  right: calc(35% + 400px); /* posiciona à direita do texto */
+}
+
+.mensagem a {
+  /* Remover linha abaixo do link */
+  text-decoration: none;
+  /* Cor do link fixa */
+  color: #ffde59;
+  /* Adicione qualquer outro estilo necessário para o link */
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* Animação de piscar para o botão de mensagem */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.mensagem {
+  /* Estilo existente */
+  padding: 20px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
+  text-align: center;
+  animation: blink 3s infinite; /* Piscar a cada segundo, infinitamente */
+}
+
+/* Desktop Grande */
+@media (min-width: 1200px) {
+  .container {
+    width: 75%;
+  }
+
+  .item {
+    flex: 1 1 300px;
+  }
+}
+
+/* Desktop Médio */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    width: 80%;
+  }
+
+  .item {
+    flex: 1 1 250px;
+  }
+}
+
+/* Tablet Paisagem */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    width: 90%;
+  }
+
+  .item {
+    flex: 1 1 200px;
+  }
+}
+
+/* Tablet Retrato */
+@media (min-width: 600px) and (max-width: 767px) {
+  .container {
+    width: 95%;
+  }
+
+  .item {
+    flex: 1 1 180px;
+  }
+}
+
+/* Smartphone Paisagem */
+@media (min-width: 480px) and (max-width: 599px) {
+  .container {
+    width: 100%;
+  }
+
+  .item {
+    flex: 1 1 160px;
+  }
+}
+
+/* Smartphone Retrato */
+@media (max-width: 479px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .item {
+    flex: 1 1 100%;
+    margin: 5px 0;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}

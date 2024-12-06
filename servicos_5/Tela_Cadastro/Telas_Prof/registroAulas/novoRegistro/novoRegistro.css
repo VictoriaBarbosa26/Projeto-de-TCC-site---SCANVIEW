@@ -1,0 +1,312 @@
+/* DEFINE O CORPO DA PÁGINA */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* DEFINE O CORPO DA PÁGINA */
+html, body {
+  margin: 0; /* Remover margem padrão */
+  padding: 0; /* Remover preenchimento padrão */
+  width: 100%; /* Garantir que o corpo ocupe toda a largura da tela */
+  height: 100%; /* Garantir que o corpo ocupe toda a altura da tela */
+  font-family: "Poppins", sans-serif; /* Define a fonte */
+  font-weight: 300; /* Define o peso da fonte */
+  font-style: normal; /* Define o estilo da fonte */
+}
+
+.diagonal-gradient {
+  position: fixed; /* Fixar a posição para cobrir a tela toda */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; 
+  background: linear-gradient(to bottom right, #003185, #000000);
+  z-index: -1; /* Garantir que o gradiente esteja atrás de todo o conteúdo */
+}
+
+html {
+  max-width: 1900px; /* Define a largura máxima */
+}
+
+.navbar {
+  background-color: #000000; /* Cor de fundo */
+  color: #fff; /* Cor do texto */
+  padding: 60px 0; /* Preenchimento vertical apenas */
+  position: relative; /* Define a posição relativa */
+  display: flex; /* Layout flexível */
+  justify-content: space-between; /* Alinhamento dos itens */
+  align-items: center; /* Centraliza os itens verticalmente */
+  border-bottom: 1px solid #fff; /* Borda branca na parte inferior */
+  width: 100vw; /* Ocupará 100% da viewport */
+  left: 0; /* Alinhamento à esquerda */
+  right: 0; /* Alinhamento à direita */
+  margin: 0; /* Remove qualquer margem */
+  box-sizing: border-box; /* Inclui preenchimento e borda na largura total */
+}
+
+/* Estilos para o ícone de perfil */
+.Perfil-Momentaneo {
+  position: absolute;
+  right: 91vw; /* Use vw (viewport width) para manter a distância da borda direita relativa ao tamanho da tela */
+  top: 50%; /* Centraliza verticalmente */
+  transform: translateY(-50%); /* Mantém centralizado verticalmente */
+  display: flex;
+  justify-content: flex-start;
+}
+
+.Perfil-Momentaneo img {
+  width: 80px;
+  height: auto; /* Mantém a proporção da imagem */
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 991px) {
+  .Perfil-Momentaneo {
+    right: 10vw; /* Aumenta a margem da direita para telas menores */
+  }
+}
+
+@media (max-width: 767px) {
+  .Perfil-Momentaneo {
+    right: 15vw; /* Ajusta ainda mais a posição para telas de tablets ou menores */
+  }
+}
+
+/* ESTILOS PARA O DROPDOWN */
+.dropdown {
+  position: absolute; /* Define a posição absoluta */
+  right: 20px; /* Alinha o dropdown à direita */
+  top: 50%; /* Centraliza verticalmente */
+  transform: translateY(-50%); /* Centraliza verticalmente */
+}
+
+.dropbtn {
+  background-color: #000000; /* Define a cor de fundo do botão */
+  color: #2EDBD3; /* Define a cor do texto */
+  padding: 16px; /* Adiciona preenchimento */
+  font-size: 40px; /* Define o tamanho da fonte */
+  border: none; /* Remove a borda */
+  cursor: pointer; /* Altera o cursor para indicar que é clicável */
+}
+
+/* ESTILOS PARA O CONTEÚDO DO DROPDOWN */
+.dropdown-content {
+  display: none; /* Oculta o conteúdo por padrão */
+  position: absolute; /* Define a posição absoluta */
+  background: linear-gradient(to bottom right, rgb(0, 0, 0), #003185); /* Define o gradiente de fundo */
+  min-width: 150px; /* Define a largura mínima */
+  z-index: 1; /* Define a ordem de empilhamento */
+  overflow: hidden; /* Oculta o overflow */
+  transition: max-height 0.3s ease-in-out; /* Aplica uma transição suave */
+  max-height: 0; /* Define a altura máxima inicialmente como zero */
+  border: 1px solid #ccc; /* Adiciona uma borda */
+  border-radius: 5px; /* Adiciona bordas arredondadas */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra */
+  right: 0; /* Alinha o dropdown à direita */
+}
+
+.dropdown.active .dropdown-content {
+  display: block; /* Exibe o conteúdo quando o dropdown está ativo */
+  max-height: 230px; /* Define a altura máxima */
+}
+
+/* ESTILOS PARA OS ITENS DO DROPDOWN */
+.dropdown-content a {
+  color: rgb(255, 255, 255); /* Define a cor do texto */
+  padding: 12px 16px; /* Adiciona preenchimento */
+  text-decoration: none; /* Remove a decoração de texto */
+  display: flex; /* Define como flex para permitir o alinhamento */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+.dropdown-content a:hover {
+  background-color: #85857b; /* Define a cor de fundo ao passar o mouse */
+}
+
+/* ESTILOS PARA OS ITENS DO DROPDOWN */
+.dropdown-item {
+  padding: 3px; /* Reduz o preenchimento interno dos itens */
+  margin: 10px; /* Adiciona uma margem entre os itens e a caixa do dropdown */
+  border: 1px solid #ccc; /* Adiciona uma borda */
+  border-radius: 5px; /* Adiciona bordas arredondadas */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra */
+  display: flex; /* Usa flexbox para alinhar os itens horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: flex-start; /* Alinha os itens à esquerda */
+  background: linear-gradient(to bottom right, rgb(0, 0, 0), #003185); /* Define o gradiente de fundo */
+  color: #fff; /* Define a cor do texto */
+}
+
+/* ESTILOS PARA AS IMAGENS DENTRO DOS ITENS DO DROPDOWN */
+.dropdown-item img {
+  width: 20px; /* Ajuste conforme necessário */
+  height: 20px; /* Ajuste conforme necessário */
+  margin-right: 10px; /* Adiciona espaço entre a imagem e o texto */
+}
+
+/* Estilos para o texto "Categorias" */
+.categorias {
+  color: #2EDBD3; /* Cor do texto */
+  font-size: 25px; /* Tamanho da fonte */
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
+  white-space: nowrap; /* Evita que o texto quebre em linhas */
+}
+
+.text-container {
+    margin-bottom: 20px; /* Adiciona margem inferior para separar o texto */
+    text-align: center; /* Centraliza o texto horizontalmente */
+}
+
+
+/* Estilos para o link "Voltar" */
+.voltar-link {
+    position: absolute; /* Posicionamento absoluto */
+    z-index: 1; /* Coloca o link "Voltar" sobre o gradiente de fundo */
+}
+
+.input-container {
+  margin-top: 2%;
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Alinha os itens em coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  gap: 10px;
+  margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+
+
+.input-container input {
+  padding: 8px;
+  font-size: 14px; /* Tamanho do texto */
+  width: 100%; /* Largura total do campo */
+  max-width: 300px; /* Largura máxima */
+}
+
+.input-container label {
+  margin-bottom: 8px;
+  font-size: 18px; /* Tamanho do texto do label */
+}
+
+.images-container {
+  display: flex;
+  justify-content: center; /* Centraliza as imagens */
+  flex-wrap: wrap; /* Permite que as imagens se ajustem em várias linhas */
+  margin: 20px 0; /* Espaçamento superior e inferior */
+}
+
+.image-item {
+  text-align: center;
+  margin: 0 10px; /* Espaço entre as imagens */
+}
+
+.images-container img {
+  width: 100px; /* Tamanho da imagem */
+  height: 100px; /* Tamanho da imagem */
+  object-fit: cover; /* Ajusta a imagem para cobrir */
+}
+
+.image-item input {
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 14px;
+  width: 100px; /* Largura do input */
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .input-container {
+      width: 90%; /* Reduz a largura no mobile */
+  }
+
+  .images-container {
+      flex-direction: column; /* Alinha imagens em coluna em telas pequenas */
+  }
+
+  .image-item {
+      margin: 10px 0; /* Espaço entre as imagens em coluna */
+  }
+
+  .custom-button {
+      width: 100%; /* Largura total no mobile */
+  }
+}
+
+
+/* Desktop Grande */
+@media (min-width: 1200px) {
+  .container {
+    width: 75%;
+  }
+
+  .item {
+    flex: 1 1 300px;
+  }
+}
+
+/* Desktop Médio */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    width: 80%;
+  }
+
+  .item {
+    flex: 1 1 250px;
+  }
+}
+
+/* Tablet Paisagem */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    width: 90%;
+  }
+
+  .item {
+    flex: 1 1 200px;
+  }
+}
+
+/* Tablet Retrato */
+@media (min-width: 600px) and (max-width: 767px) {
+  .container {
+    width: 95%;
+  }
+
+  .item {
+    flex: 1 1 180px;
+  }
+}
+
+/* Smartphone Paisagem */
+@media (min-width: 480px) and (max-width: 599px) {
+  .container {
+    width: 100%;
+  }
+
+  .item {
+    flex: 1 1 160px;
+  }
+}
+
+/* Smartphone Retrato */
+@media (max-width: 479px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .item {
+    flex: 1 1 100%;
+    margin: 5px 0;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}

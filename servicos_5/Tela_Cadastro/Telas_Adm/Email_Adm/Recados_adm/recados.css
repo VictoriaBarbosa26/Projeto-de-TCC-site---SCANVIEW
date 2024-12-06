@@ -1,0 +1,250 @@
+/* DEFINE O CORPO DA PÁGINA */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 110%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Responsividade */
+@media (min-width: 1200px) {
+    .container { width: 75%; }
+    .item { flex: 1 1 300px; }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container { width: 80%; }
+    .item { flex: 1 1 250px; }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .container { width: 90%; }
+    .item { flex: 1 1 200px; }
+}
+@media (min-width: 600px) and (max-width: 767px) {
+    .container { width: 95%; }
+    .item { flex: 1 1 180px; }
+}
+@media (min-width: 480px) and (max-width: 599px) {
+    .container { width: 100%; }
+    .item { flex: 1 1 160px; }
+}
+@media (max-width: 479px) {
+    .container { width: 100%; padding: 0 10px; }
+    .item { flex: 1 1 100%; margin: 5px 0; }
+    body { font-size: 14px; }
+}
+
+/* Gradiente de Fundo */
+.diagonal-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, #003185, #000000);
+    z-index: -1;
+}
+
+/* Barra de Navegação */
+.navbar {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+}
+
+/* Ícone de Perfil */
+.Perfil-Momentaneo {
+    position: absolute;
+    right: 1120px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.Perfil-Momentaneo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Dropdown */
+.dropdown {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dropbtn {
+    background-color: #000000;
+    color: rgb(0, 229, 255);
+    padding: 16px;
+    font-size: 40px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: linear-gradient(to bottom right, rgb(0, 0, 0), #003185, rgb(0, 0, 0));
+    min-width: 150px;
+    z-index: 1;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    max-height: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    right: 0;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+    max-height: 230px;
+}
+
+.dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #85857b; /* Define a cor de fundo ao passar o mouse */
+}
+
+.dropdown-item {
+    padding: 3px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom right, rgb(0, 0, 0), #003185, rgb(0, 0, 0));
+    color: #fff;
+}
+
+.dropdown-item img {
+    width: 20px;
+    height: 20px;
+    margin-right: 1px;
+}
+
+/* Texto "Categorias" */
+.categorias {
+    color: #2EDBD3;
+    font-size: 25px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    position: absolute;
+    left: 48%;
+    transform: translateX(-50%);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Estilos para o botão "Voltar" */
+.voltar-img {
+    width: 30px;
+    height: auto;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    transform: translateY(0); /* Remover centralização */
+}
+
+.voltar-link {
+    position: absolute;
+    z-index: 1;
+}
+
+/* Estilos para a imagem do e-mail */
+.email-img {
+    width: 45px;
+    height: auto;
+    position: absolute;
+    left: 265px;
+    top: 300px;
+    transform: translateY(-50%);
+}
+.mensagem-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Centralizar verticalmente */
+    width: 100vw;  /* Centralizar horizontalmente */
+    position: relative; 
+}
+
+.mensagem {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    width: 50%;
+    text-align: left; /* Alinhando o texto à esquerda */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Alinhando os itens à esquerda */
+}
+
+.mensagem p {
+    margin: 10px 0;
+    font-weight: 300;
+    text-align: justify; /* Centraliza o texto horizontalmente */
+    
+}
+
+.mensagem d1 {
+    margin: 10px 0;
+    font-weight: 300;
+    text-align: justify; /* Centraliza o texto horizontalmente */
+    font-weight: bold;
+    
+}
+.mensagem h3 {
+    margin-bottom: 18px;
+    font-weight: 600;
+    font-weight: bold;
+    float: left;
+    margin-top: -10px; /* Ajusta para subir o elemento */
+}
+
+.responder {
+    margin-top: -180px; /* Espaçamento acima */
+    display: flex;
+    flex-direction: column; /* Muda a direção para coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Alinha ao centro */
+    width: 100%; /* Para ocupar toda a largura */
+    margin-left: 280px; /* Ajuste este valor para mover mais à direita */
+}
+
+.responder-link{
+    color: white; /* Cor do texto */
+    cursor: pointer; /* Cursor de ponteiro para indicar clicável */
+    font-weight: 500; /* Negrito */
+    transition: color 0.3s; /* Transição suave de cor */
+    margin-right: 20px; /* Espaçamento à direita, se necessário */
+}
+.marcar-lida-link {
+    color: #2EDBD3; /* Cor do texto */
+    cursor: pointer; /* Cursor de ponteiro para indicar clicável */
+    font-weight: 500; /* Negrito */
+    transition: color 0.3s; /* Transição suave de cor */
+    margin-right: 20px; /* Espaçamento à direita, se necessário */
+}
